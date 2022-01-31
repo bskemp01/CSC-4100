@@ -31,7 +31,7 @@ install:
 	mcopy -o kernel a:kernel
 
 run:
-	qemu-system-i386 -boot a -fda a.img
+	qemu-system-i386 -S -s -boot a -fda a.img
 
 launch:
 	${MAKE} clean
