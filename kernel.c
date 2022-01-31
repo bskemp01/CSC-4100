@@ -11,7 +11,7 @@ int main(){
     char *message = "OS 4100";
     k_print(message, 7, 12, 40);
 
-    return 0;
+    while(1);
 }
 
 void k_clearscr(){
