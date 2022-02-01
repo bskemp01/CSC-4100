@@ -3,14 +3,14 @@ GLOBAL k_print
 k_print:
 	push ebp
 	mov ebp, esp
-	pushfd
+	
 	push eax
 	push ebx
 	push esi
 	push edi
 
 	mov ebx, [ebp + 20]	
-	mov eax, [ebp + 16]	
+	mov eax, [ebp + 16]
 	mov esi, [ebp + 8]	
 
 	;Calculate offset using equation
@@ -21,13 +21,12 @@ k_print:
 	imul eax, 2			
 	add eax, 0xB8000	
 	mov edi, eax		
-    mov esi, [ebp +8]
+    mov esi, [ebp + 8]
     
     loop:
-        cmpb esi, 0
+        cmp esi, 0
         je done
         movsb 	
-        movb es:[edi], 31
         inc edi
         jmp loop
 
@@ -36,6 +35,5 @@ k_print:
         pop esi
         pop ebx
         pop eax
-        popfd
         pop ebp
         ret

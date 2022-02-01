@@ -19,7 +19,7 @@ clean:
 	rm -f kernel
 	rm -f boot1
 	rm -f kernel.exe
-	rm -f kernel_S.o
+	rm -f kernel_asm.o
 	rm -f kernel_c.o
 	rm -f boot1.list
 	rm -f a.img
