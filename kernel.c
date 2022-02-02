@@ -8,11 +8,11 @@ int main(){
 
     k_clearscr();
     
-    print_border(0, 0, 24, 80);
+    print_border(0, 0, 24, 79);
     char *message = "OS 4100";
-    k_print(message, 35, 12, 35);
-    int run = 1;
-    while(run == 1);
+    k_print(message, 7, 12, 35);
+    
+    while(1);
 }
 
 void k_clearscr(){
@@ -28,30 +28,28 @@ void k_clearscr(){
 void print_border(int start_row, int start_col, int end_row, int end_col){
     
     //top border
-    char *all = "$";
-    for(int i = start_col; i < end_col; i++){
-        k_print(all, 80, start_row, i);
-    };
+    char *tnb = "------------------------------------------------------------------------------";
+    k_print(tnb, 78, start_row, 1);
+    
     
 
     //side borders
-    int row = start_row + 1;
-    while(row < 24){
-        k_print(all, 1, row, 0);
-        k_print(all, 1, row, 79);
-        row++;
+    char sideBar[] = "|";
+    for(int row = start_row + 1; row < end_row; row++){
+        k_print(sideBar, 1, row, 0);
+        k_print(sideBar, 1, row, 79);
     };
 
     //bottom border
-    for(int i = start_col; i < end_col; i++){
-        k_print(all, 1, end_row, i);
+    for(int i = start_col + 1; i < end_col; i++){
+        k_print(tnb, 1, end_row, i);
     };
 
-    // char *corners = "+";
-    // k_print(corners, 1, 0, 0);
-    // k_print(corners, 1, 25, 0);
-    // k_print(corners, 1, 0, 80);
-    // k_print(corners, 1, 25, 80);
+    char corners[] = "+";
+    k_print(corners, 1, 0, 0);
+    k_print(corners, 1, 24, 0);
+    k_print(corners, 1, 0, 79);
+    k_print(corners, 1, 24, 79);
 
     
 }

@@ -19,24 +19,23 @@ k_print:
 	add edx, eax  ;adding eax total to 0xB8000
 
 	mov edi, edx ;moving address to edi
-	mov eax, [ebp + 8] ;placing string in eax
-	mov ecx, [eax] 
-	mov [esi], ecx
+	mov esi, [ebp + 8] ;placing string in eax
+	
 
 _loop:
-	cmp edi, 0xBF9E
+	cmp edi, 0xB8000 + (80*25*2)
 	je _done
 
 	cmp BYTE [esi], 0
 	je _done
 	
+	cld
 	movsb 	
-	mov BYTE [edi], 27
+	mov BYTE [edi], 58
 	
 	inc edi
 	dec ebx
 
-	cmp BYTE ebx, 0
 	jg _loop
 
 _done:
