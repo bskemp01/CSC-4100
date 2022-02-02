@@ -16,7 +16,6 @@ kernel_c.o: kernel.c
 	gcc -g -m32 -c -o kernel_c.o kernel.c
 
 clean:
-	rm -f kernel
 	rm -f boot1
 	rm -f boot2
 	rm -f kernel.exe
@@ -33,13 +32,6 @@ install:
 
 run:
 	qemu-system-i386 -boot a -fda a.img
-
-launch:
-	${MAKE} clean
-	${MAKE} all
-	${MAKE} install
-	${MAKE} run
-	${MAKE} clean
 
 dubug:
 	qemu-system-i386 -S -s -boot a -fda a.img

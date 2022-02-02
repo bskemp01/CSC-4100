@@ -23,7 +23,7 @@ k_print:
 	
 
 _loop:
-	cmp edi, 0xB8000 + (80*25*2)
+	cmp edi, 0xB8000 + 4000
 	je _done
 
 	cmp BYTE [esi], 0

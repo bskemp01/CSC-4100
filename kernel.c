@@ -28,9 +28,10 @@ void k_clearscr(){
 void print_border(int start_row, int start_col, int end_row, int end_col){
     
     //top border
-    char *tnb = "------------------------------------------------------------------------------";
-    k_print(tnb, 78, start_row, 1);
-    
+    char *tnb = "-";
+    for(int col = start_col + 1; col < end_col; col++){
+        k_print(tnb, 1, start_row, col);
+    };
     
 
     //side borders
