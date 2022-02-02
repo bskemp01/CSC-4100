@@ -18,6 +18,7 @@ kernel_c.o: kernel.c
 clean:
 	rm -f kernel
 	rm -f boot1
+	rm -f boot2
 	rm -f kernel.exe
 	rm -f kernel_asm.o
 	rm -f kernel_c.o
